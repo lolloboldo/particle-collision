@@ -21,7 +21,7 @@ class Particle{
 
   //FUNZIONALITA'
   double invariantmass() const;      //da massa invariante
-  void boost();                      //esegue boost lorentz
+  void boost(Tvector3 boostVec);                      //esegue boost lorentz
   virtual Tlorentzvector* decay();   //legge decadimento particella, pure virtual
   
 //-----------------------------------------------------
