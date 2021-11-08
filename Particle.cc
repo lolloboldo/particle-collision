@@ -9,9 +9,9 @@ using namespace std;
 //COSTRUTTORI
 Particle::Particle(){}
   
-Particle::Particle(double mass, Tlorentzvector momentum){
-    this.mass(mass);
-    this.momentum(momentum)
+Particle::Particle(double mass, TLorentzVector momentum){
+    mass(mass);
+    momentum(momentum);
 } 
 
 //GETTER
@@ -19,7 +19,7 @@ double Particle::mass() const{
     return this.mass_;
 }
   
-Tlorentzvector  momentum() const{
+TLorentzVector Particle::momentum() const{
     return this.momentum_;
 }
 
@@ -32,7 +32,7 @@ void  Particle::mass(double mass){
     }
 }
 
-void Particle::momentum(Tlorentzvector momentum){
+void Particle::momentum(TLorentzVector momentum){
    this.momentum_ = momentum;
 }
 
@@ -41,6 +41,6 @@ double Particle::invariantmass() const{
    return this.momentum_->M2();
 }
 
-void Particle::boost(Tvector3 boostVec){
+void Particle::boost(TVector3 boostVec){
   this.momentum_->Boost(boostVec);
 }
